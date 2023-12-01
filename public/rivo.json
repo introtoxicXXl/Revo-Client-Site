@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Cotton T-shirt",
+      "img": "https://i.ibb.co/1mhHxNt/pexels-dima-valkov-6211621-1.jpg",
+      "description": "Comfortable cotton t-shirt for everyday wear.",
+      "price": 19.99,
+      "rating": 4.5,
+      "brand": "Adidas"
+    },
+    {
+      "id": 2,
+      "name": "Denim Jeans",
+      "img": "https://i.ibb.co/MnNFQXJ/pexels-dima-valkov-6211616-1-2.jpg",
+      "description": "Classic denim jeans with a modern fit.",
+      "price": 39.99,
+      "rating": 4.2,
+      "brand": "Levi's"
+    },
+    {
+      "id": 3,
+      "name": "Leather Jacket",
+      "img": "https://i.ibb.co/P5ZGhXq/pexels-dima-valkov-6503007-3.jpg",
+      "description": "Stylish leather jacket for a trendy look.",
+      "price": 79.99,
+      "rating": 4.8,
+      "brand": "Gucci"
+    },
+    {
+      "id": 4,
+      "name": "Sneakers",
+      "img": "https://i.ibb.co/QDV1PHb/pexels-dima-valkov-6511777-1.png",
+      "description": "Casual sneakers for a sporty yet fashionable vibe.",
+      "price": 49.99,
+      "rating": 4.0,
+      "brand": "Nike"
+    },
+    {
+      "id": 5,
+      "name": "Summer Dress",
+      "img": "https://i.ibb.co/LgrCDK5/pexels-dima-valkov-6211614-1.png",
+      "description": "Flowy summer dress perfect for warm days.",
+      "price": 29.99,
+      "rating": 4.7,
+      "brand": "Zara"
+    },
+    {
+      "id": 6,
+      "name": "Formal Suit",
+      "img": "https://i.ibb.co/sFLz7ZL/pexels-dima-valkov-6211601-1.png",
+      "description": "Elegant formal suit for special occasions.",
+      "price": 129.99,
+      "rating": 4.9,
+      "brand": "Armani"
+    }
+  ]
+  
