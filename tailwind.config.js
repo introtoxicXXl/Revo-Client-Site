@@ -7,9 +7,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'Rufina': "'Rufina', serif"
+        'Rufina': "'Rufina', serif",
+        'Roboto': "'Roboto Slab', serif",
+        'Poppins': "'Poppins', sans-serif;",
       }
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light"],
+  },
 }
