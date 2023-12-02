@@ -12,16 +12,16 @@ const OurProducts = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
-                setFilteredProducts(data); // Set initial filtered products to all products
+                setFilteredProducts(data);
             })
     }, [])
 
     const filterItem = (cats) => {
         if (cats === 'All') {
-            setFilteredProducts(products); // Show all products when "All" is clicked
+            setFilteredProducts(products); 
         } else {
             const updateItems = products.filter(pro => pro.brand === cats);
-            setFilteredProducts(updateItems); // Filter products by brand
+            setFilteredProducts(updateItems); 
         }
     }
 
