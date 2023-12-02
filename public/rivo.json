@@ -15,7 +15,7 @@
       "description": "Classic denim jeans with a modern fit.",
       "price": 39.99,
       "rating": 4.2,
-      "brand": "Levi's"
+      "brand": "Zara"
     },
     {
       "id": 3,
@@ -24,7 +24,7 @@
       "description": "Stylish leather jacket for a trendy look.",
       "price": 79.99,
       "rating": 4.8,
-      "brand": "Gucci"
+      "brand": "Nike"
     },
     {
       "id": 4,
@@ -51,7 +51,7 @@
       "description": "Elegant formal suit for special occasions.",
       "price": 129.99,
       "rating": 4.9,
-      "brand": "Armani"
+      "brand": "Adidas"
     }
   ]
   
