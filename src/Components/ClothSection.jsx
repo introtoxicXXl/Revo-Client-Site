@@ -22,7 +22,7 @@ const ClothSection = () => {
         }
     ]
     return (
-        <div className="mt-7 container mx-auto">
+        <div className="my-10 container mx-auto">
             <div className="space-y-4 mb-5">
                 <h2 className="font-Roboto font-medium lg:text-5xl md:text-3xl text-2xl text-center text-myColor">Designer Clothes For You</h2>
                 <p className="font-Poppins text-myColor font-medium lg:text-xl md:text-lg text-sm text-center">Immerse yourself in the world of luxury fashion with our <br /> meticulously crafted designer clothes!</p>
@@ -31,7 +31,7 @@ const ClothSection = () => {
                 {
                     cloths.map(cloth =>
                         <div key={cloth.id}>
-                            <img className="w-full" src={cloth.img} alt="" />
+                            <img className="w-full rounded-t-lg" src={cloth.img} alt="" />
                             <h4 className="text-center font-Poppins font-semibold text-3xl mt-5">{cloth.title}</h4>
                             <p className="text-center font-Poppins">{cloth.description}</p>
                         </div>
