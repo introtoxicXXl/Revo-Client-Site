@@ -81,7 +81,7 @@ const Registration = () => {
     return (
         <div className="hero min-h-screen">
             <Helmet><title>Registration</title></Helmet>
-            <div className="card">
+            <div className="card lg:w-1/3 mx-auto">
                 <div className="card-body shrink-0 w-full shadow-2xl bg-base-100">
                     <form onSubmit={handleRegistration} className="">
                         <div className="form-control">
@@ -129,7 +129,7 @@ const Registration = () => {
                                     type={check ? "text" : "password"}
                                     name="password"
                                     placeholder="password"
-                                    className="input input-bordered "
+                                    className="input input-bordered w-full"
                                     required
                                 />
                                 <span className="absolute top-1/3 right-3 cursor-pointer" onClick={() => setCheck(!check)}>{check ? <IoEyeOff /> : <IoEye />}</span>
@@ -141,7 +141,7 @@ const Registration = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn bg-myColor hover:bg-myColor text-[#fff]">Registration</button>
                         </div>
-                        <p className="mt-3 text-sm text-center">Already have an account? <Link to='/login' className="hover:underline text-info">Login</Link></p>
+                        <p className="mt-3 text-sm text-center">Already have an account? <Link to='/login' className="hover:underline text-myColor font-medium">Login</Link></p>
                     </form>
                     <SocialUser></SocialUser>
                 </div>

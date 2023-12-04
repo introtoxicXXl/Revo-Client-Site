@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css';
+import useAuth from "../Hook/hook";
 
 const Navbar = () => {
+    const { user, handleSignOut } = useAuth();
 
     return (
         <nav className="bg-[#C2EFD4] border-gray-200">
@@ -23,14 +25,26 @@ const Navbar = () => {
                         <li>
                             <NavLink to='/products' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Products</NavLink>
                         </li>
-                        <li>
-                            <NavLink to='/contact' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Contact</NavLink>
-                        </li>
+                        {
+                            user && <li>
+                                <NavLink to='/dashboard' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Dashboard</NavLink>
+                            </li>
+                        }
+                        {
+                            user ?
+                                <li className="block cursor-pointer py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" onClick={handleSignOut} >
+                                    Sign Out
+                                </li>
+                                :
+                                <li>
+                                    <NavLink to='/login' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Login</NavLink>
+                                </li>
+                        }
 
                     </ul>
                 </div>
-            </div>
-        </nav>
+            </div >
+        </nav >
 
     );
 };

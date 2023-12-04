@@ -6,11 +6,13 @@ import Products from "../Pages/Products";
 import PrivetRoute from "./PrivetRoute";
 import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
+import ErrorPage from './../Pages/ErrorPage';
 
 export const Routes = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+        errorElement:<ErrorPage/>,
         children: [
             {
                 path: '/',

@@ -64,8 +64,8 @@ const Login = () => {
     return (
         <div className="hero min-h-screen">
             <Helmet><title>Login</title></Helmet>
-            <div className="card">
-                <div className="card-body shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card lg:w-1/3 mx-auto">
+                <div className="card-body shrink-0 shadow-2xl bg-base-100">
                     <form onSubmit={handleSignIn} className="">
                         <div className="form-control">
                             <label className="label">
@@ -100,7 +100,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn bg-myColor hover:bg-myColor text-[#fff]">Login</button>
                         </div>
-                        <p className="mt-3 text-sm text-center">Do not have an account? <Link to='/registration' className="hover:underline text-info">Registration</Link></p>
+                        <p className="mt-3 text-sm text-center">Do not have an account? <Link to='/registration' className="hover:underline text-myColor font-medium">Registration</Link></p>
                     </form>
                     <SocialUser></SocialUser>
                 </div>
