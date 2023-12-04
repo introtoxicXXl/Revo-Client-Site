@@ -88,7 +88,7 @@ const Login = () => {
                                     type={check ? "text" : "password"}
                                     name="password"
                                     placeholder="password"
-                                    className="input input-bordered "
+                                    className="input input-bordered w-full"
                                     required
                                 />
                                 <span className="absolute top-1/3 right-3 cursor-pointer" onClick={() => setCheck(!check)}>{check ? <IoEyeOff /> : <IoEye />}</span>
@@ -98,7 +98,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-info text-white">Login</button>
+                            <button type="submit" className="btn bg-myColor hover:bg-myColor text-[#fff]">Login</button>
                         </div>
                         <p className="mt-3 text-sm text-center">Do not have an account? <Link to='/registration' className="hover:underline text-info">Registration</Link></p>
                     </form>
