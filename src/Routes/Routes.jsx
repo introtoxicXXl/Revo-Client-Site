@@ -3,6 +3,8 @@ import App from "../App";
 import Home from "../Pages/Home";
 import DetailsProduct from "../Pages/DetailsProduct";
 import Products from "../Pages/Products";
+import PrivetRoute from "./PrivetRoute";
+import Login from "../Pages/Login";
 
 export const Routes = createBrowserRouter([
     {
@@ -15,12 +17,16 @@ export const Routes = createBrowserRouter([
             },
             {
                 path: 'product/:id',
-                element: <DetailsProduct />
+                element: <PrivetRoute><DetailsProduct /></PrivetRoute>
             },
             {
                 path:'/products',
                 element:<Products/>,
                 loader:()=>fetch('rivo.json')
+            },
+            {
+                path:'/login',
+                element:<Login/>
             }
         ]
     },
