@@ -21,7 +21,7 @@ const Navbar = () => {
                             <NavLink to='/' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/shop' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Shop</NavLink>
+                            <NavLink to='/products' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Products</NavLink>
                         </li>
                         <li>
                             <NavLink to='/contact' className="block py-2 px-3 rounded bg-transparent md:p-0 text-[#224F34]" aria-current="page">Contact</NavLink>
