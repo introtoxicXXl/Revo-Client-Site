@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../Hook/hook";
-import SocialUser from "../component/SocialUser/SocialUser";
 import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
+import SocialUser from './../Components/SocialUser';
+import useAuth from "../Hook/hook";
 
 
 const Login = () => {
@@ -25,34 +25,34 @@ const Login = () => {
         handleLogin(email, password)
             .then(res => {
                 navigate(location?.state ? location.state : '/')
-                swal(`Welcome Back to Donaty ${res.user.displayName}`, {
-                    buttons: false,
-                    timer: 2000,
-                    className:"bg-green-200"
+                Swal.fire({
+                    title: `Welcome to rivo ${res.user.displayName}`,
+                    text: "That thing is still around?",
+                    icon: "question"
                 });
             })
             .catch(error => {
                 const errorMessage = error.message;
                 if (errorMessage === 'auth/user-not-found') {
-                    swal('User not found with provided email', {
-                        buttons: false,
-                        timer: 2000,
-                        className:"bg-red-200"
-                    });
+                    Swal.fire({
+                        icon: "error",
+                        title: "User not found with provided email",
+                        text: "Something went wrong!"
+                      });
 
                 } else if (errorMessage === 'auth/wrong-password') {
-                    swal('Incorrect password', {
-                        buttons: false,
-                        timer: 2000,
-                        className:"bg-red-200"
-                    });
+                    Swal.fire({
+                        icon: "error",
+                        title: "Incorrect password",
+                        text: "Something went wrong!"
+                      });
 
                 } else {
-                    swal('Your Email or Password is Incorrect', {
-                        buttons: false,
-                        timer: 2000,
-                        className:"bg-red-200"
-                    });
+                    Swal.fire({
+                        icon: "error",
+                        title: "Your Email or Password is Incorrect",
+                        text: "Something went wrong!"
+                      });
 
                 }
             })
