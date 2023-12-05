@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
+import { useLoaderData } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 
 const DetailsProduct = () => {
-    const [details, setDetails] = useState([]);
-    const { img, name, description, brand, price, rating } = details;
-    const id = useParams();
-    useEffect(() => {
-        fetch(`/rivo.json`)
-            .then(res => res.json())
-            .then(data => {
-                const product = data.filter(d => parseInt(d.id) === parseInt(id.id))
-                setDetails(product[0])
-            })
-    }, [])
+    const data = useLoaderData();
+    const {name,img,description,rating,price,brand } = data;
     return (
         <div className="hero min-h-screen">
+            <Helmet><title>{name}</title></Helmet>
             <div className="hero-content flex-col lg:flex-row">
                 <div className="basis-1/2">
                     <img src={img} className="rounded-lg lg:w-3/5" />
