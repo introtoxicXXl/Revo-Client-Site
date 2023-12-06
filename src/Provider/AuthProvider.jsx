@@ -7,8 +7,9 @@ export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider();
 
 function AuthProvider({ children }) {
-    const [user, setUser] = useState(false)
-    const [loader, setLoader] = useState(true)
+    const [user, setUser] = useState(false);
+    const [loader, setLoader] = useState(true);
+    const [cartPrice,setCartPrice]=useState(0)
 
 
 
@@ -40,6 +41,9 @@ function AuthProvider({ children }) {
         setLoader(true);
         return signOut(auth)
     }
+    const handleAddToCart = (price) => {
+        setCartPrice(cartPrice+price).toFixed(2)
+    }
 
 
     useEffect(() => {
@@ -58,7 +62,9 @@ function AuthProvider({ children }) {
         handleLogin,
         handleSignOut,
         updateUser,
-        loader
+        loader,
+        handleAddToCart,
+        cartPrice
     }
     return (
         <AuthContext.Provider value={authInfo}>

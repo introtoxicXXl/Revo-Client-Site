@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const AllProducts = () => {
@@ -12,13 +14,33 @@ const AllProducts = () => {
         })
             .then(res => res.json)
             .then(data => {
-                const remaining = updateProduct.filter(pro => pro._id !== id);
-                setUpdateProduct(remaining);
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const remaining = updateProduct.filter(pro => pro._id !== id);
+                        setUpdateProduct(remaining);
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                    }
+
+                });
+
             })
     }
 
     return (
         <div className="grid md:grid-cols-3 gap-4 my-10">
+        <Helmet><title>Dashboard-All Products</title></Helmet>
             {
                 updateProduct.map(product =>
 

@@ -1,11 +1,18 @@
 
 import { useLoaderData } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import useAuth from './../Hook/hook';
 
 
 const DetailsProduct = () => {
     const data = useLoaderData();
-    const {name,img,description,rating,price,brand } = data;
+    const { handleAddToCart} = useAuth();
+    const { name, img, description, rating, price, brand } = data;
+
+    const addToCart=price=>{
+        handleAddToCart(price)
+    }
+
     return (
         <div className="hero min-h-screen">
             <Helmet><title>{name}</title></Helmet>
@@ -24,7 +31,7 @@ const DetailsProduct = () => {
                         <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">{rating}</span>
                     </div>
                     <p className="text-myColor font-bold text-xl">Price: ${price}</p>
-                    <button className="text-white bg-myColor btn btn-md focus:outline-none text-[rgb(255,255,255)] hover:bg-myColor font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add To Cart</button>
+                    <button className="text-white bg-myColor btn btn-md focus:outline-none text-[rgb(255,255,255)] hover:bg-myColor font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={()=>addToCart(price)}>Add To Cart</button>
                 </div>
             </div>
         </div>
