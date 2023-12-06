@@ -50,11 +50,11 @@ const AllProducts = () => {
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{product.name}</h5>
                             <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">{product.brand}</span>
                             <p className="my-3 font-normal text-gray-700 dark:text-gray-400">{product.description.slice(0, 100)}</p>
-                            <div className="flex justify-between">
-                                <Link to={`/dashboard/allProducts/update/${product._id}`} className="text-[#fff] hover:bg-myColor bg-myColor btn ">
+                            <div className="flex justify-evenly">
+                                <Link to={`/dashboard/allProducts/update/${product._id}`} className="text-[#fff] hover:bg-myColor bg-myColor btn lg:btn-md btn-sm">
                                     Update
                                 </Link>
-                                <button onClick={() => handleDelete(product._id)} className="text-[#fff] btn btn-error ">
+                                <button onClick={() => handleDelete(product._id)} className="text-[#fff] btn btn-error lg:btn-md btn-sm">
                                     Delete
                                 </button>
                             </div>

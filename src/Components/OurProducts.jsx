@@ -35,13 +35,13 @@ const OurProducts = () => {
                     <li className="cursor-pointer text-myColor font-medium font-Roboto md:text-xl" onClick={() => filterItem('Adidas')}>Adidas</li>
                     <li className="cursor-pointer text-myColor font-medium font-Roboto md:text-xl" onClick={() => filterItem('Nike')}>Nike</li>
                     <li className="cursor-pointer text-myColor font-medium font-Roboto md:text-xl" onClick={() => filterItem('Zara')}>Zara</li>
-                    <li className="cursor-pointer text-myColor font-medium font-Roboto md:text-xl" onClick={() => filterItem('Gucchi')}>Gucci</li>
+                    <li className="cursor-pointer text-myColor font-medium font-Roboto md:text-xl" onClick={() => filterItem('Gucci')}>Gucci</li>
                     <li className="cursor-pointer text-myColor font-medium font-Roboto md:text-xl" onClick={() => filterItem('Levi')}>Levi</li>
                 </ul>
             </div>
             <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-3 justify-center">
                 {
-                    filteredProducts.length > 0 ? filteredProducts.map(product => <Product key={product.id} product={product}></Product>) : <p className="text-center text-myColor font-semibold font-Poppins text-2xl w-full h-48 col-span-12 flex items-center justify-center">No products available for this brand.</p>
+                    filteredProducts.length > 0 ? filteredProducts.map(product => <Product key={product.id} product={product}></Product>).slice(0,8) : <p className="text-center text-myColor font-semibold font-Poppins text-2xl w-full h-48 col-span-12 flex items-center justify-center">No products available for this brand.</p>
                 }
             </div>
         </div>
