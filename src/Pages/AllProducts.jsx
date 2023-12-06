@@ -9,7 +9,7 @@ const AllProducts = () => {
     const data = useLoaderData();
     const [updateProduct, setUpdateProduct] = useState(data)
     const handleDelete = id => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://rivo-server.vercel.app/product/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json)

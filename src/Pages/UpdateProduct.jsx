@@ -25,7 +25,7 @@ const UpdateProduct = () => {
             });
         }
 
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://rivo-server.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

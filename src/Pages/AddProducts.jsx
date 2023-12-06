@@ -22,7 +22,7 @@ const AddProducts = () => {
             });
         }
 
-        fetch('http://localhost:5000/products',
+        fetch('https://rivo-server.vercel.app/products',
             {
                 method: 'POST',
                 headers: {

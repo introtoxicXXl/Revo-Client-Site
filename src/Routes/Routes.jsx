@@ -27,12 +27,12 @@ export const Routes = createBrowserRouter([
             {
                 path: 'product/:id',
                 element: <PrivetRoute><DetailsProduct /></PrivetRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+                loader:({params})=>fetch(`https://rivo-server.vercel.app/product/${params.id}`)
             },
             {
                 path: '/products',
                 element: <Products />,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://rivo-server.vercel.app/products')
             },
             {
                 path: '/login',
@@ -61,12 +61,12 @@ export const Routes = createBrowserRouter([
                     {
                         path: '/dashboard/allProducts',
                         element: <AllProducts />,
-                        loader: () => fetch('http://localhost:5000/products')
+                        loader: () => fetch('https://rivo-server.vercel.app/products')
                     },
                     {
                         path: '/dashboard/allProducts/update/:id',
                         element: <UpdateProduct />,
-                        loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+                        loader:({params})=>fetch(`https://rivo-server.vercel.app/product/${params.id}`)
                     },
                 ]
             }

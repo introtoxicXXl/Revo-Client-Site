@@ -9,7 +9,7 @@ const AddToCart = () => {
     const cartItems = getItem();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/cart?ids=${cartItems}`)
+        fetch(`https://rivo-server.vercel.app/products/cart?ids=${cartItems}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [cartItems])
