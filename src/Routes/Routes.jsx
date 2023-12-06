@@ -12,6 +12,7 @@ import Profile from "../Pages/Profile";
 import AddProducts from "../Pages/AddProducts";
 import AllProducts from "../Pages/AllProducts";
 import UpdateProduct from "../Pages/UpdateProduct";
+import AddToCart from "../Pages/addToCart";
 
 export const Routes = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const Routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path:'/cart',
+                element:<PrivetRoute><AddToCart/></PrivetRoute>
             },
             {
                 path: '/registration',

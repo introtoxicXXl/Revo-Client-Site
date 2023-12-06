@@ -7,14 +7,23 @@ const getItem = () => {
 }
 const saveCart = cart => {
     const cartStringified = JSON.stringify(cart);
-    localStorage.setItem('donate', cartStringified);
+    localStorage.setItem('rivo', cartStringified);
 }
 const addToLs = id => {
     const cart = getItem();
     const exists = cart.find(cartId => cartId === id);
-    if(!exists){
+    if (!exists) {
         cart.push(id);
         saveCart(cart);
     }
 }
-export { addToLs, getItem }
+
+const deleteFromLs = id => {
+    const cart = getItem();
+    const index = cart.findIndex(cartId => cartId === id);
+    if (index !== -1) {
+        cart.splice(index, 1);
+        saveCart(cart);
+    }
+};
+export { addToLs, getItem, deleteFromLs }

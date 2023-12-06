@@ -2,16 +2,22 @@ import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import auth from './../utility/firebase.confog';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { addToLs, getItem } from '../utility/localStorage';
 
 export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider();
 
 function AuthProvider({ children }) {
+
     const [user, setUser] = useState(false);
     const [loader, setLoader] = useState(true);
-    const [cartPrice,setCartPrice]=useState(0)
+    const [cartPrice, setCartPrice] = useState(0);
+    const [cartItems, setCartItems] = useState([])
 
-
+    useEffect(() => {
+        const cart = getItem();
+        setCartItems(cart)
+    }, [cartItems])
 
     // create user by email password
     const handleSignIn = (email, password) => {
@@ -41,8 +47,11 @@ function AuthProvider({ children }) {
         setLoader(true);
         return signOut(auth)
     }
-    const handleAddToCart = (price) => {
-        setCartPrice(cartPrice+price).toFixed(2)
+    const handleAddToCart = (price, id) => {
+        addToLs(id);
+        const cart = getItem()
+        setCartItems(cart);
+        setCartPrice(cartPrice + price);
     }
 
 
@@ -64,7 +73,8 @@ function AuthProvider({ children }) {
         updateUser,
         loader,
         handleAddToCart,
-        cartPrice
+        cartPrice,
+        cartItems
     }
     return (
         <AuthContext.Provider value={authInfo}>
