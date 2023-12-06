@@ -7,7 +7,6 @@ const Banner = () => {
                 <div className="basis-1/2">
                     <h2 className="lg:text-7xl md:text-5xl text-4xl md:mt-0 mt-5 font-bold text-[#224F34] font-Rufina">Life Is Not Perfect But Outfit Can Be!!</h2>
                     <p className="lg:text-2xl text-lg text-[#224F34] mt-5 font-medium">Explore our curated collection of stylish clothing and accessories tailored to your unique taste.</p>
-                    <button className="btn bg-[#224F34] text-[#fff] hover:bg-[#173624] hover:shadow-xl mt-5">Explore More</button>
                 </div>
                 <div className="basis-1/2 flex justify-end items-center lg:pr-10">
                     <div className="lg:w-3/5">

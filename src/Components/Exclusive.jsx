@@ -12,7 +12,6 @@ const Exclusive = () => {
                     <h2 className="font-Roboto text-myColor font-bold md:text-4xl text-2xl">Exclusive Offer</h2>
                     <p className="text-myColor font-Poppins md:text-xl text-sm">Unlock the ultimate style upgrade with our exclusive offer Enjoy savings of up to 40% off on our latest New Arrivals</p>
                     <CountDown/>
-                    <button className="px-7 rounded border-myColor hover:bg-myColor hover:text-[#fff] transition-all hover:shadow-xl btn bg-transparent hover:border-none text-myColor my-8 py-2 border-2 flex items-center">Buy Now</button>
                 </div>
             </div>
         </div>
